@@ -1,5 +1,6 @@
 import callApi from "./callApi.js";
-import checkName from "./checkName.js";
+import axios from 'axios';
+//import checkName from "./checkName.js";
 
 const mock_data_from_api = {
   "title":"data from API",
@@ -8,7 +9,7 @@ const mock_data_from_api = {
 };
 
 const theForm = document.querySelector('#the-form');
-const callApiElement = document.querySelector('#call-api');
+const apiResult = document.querySelector('#api-result');
 const currentYearElement = document.querySelector('#this-year');
 
 //seting date to current year:
@@ -19,19 +20,16 @@ currentYearElement.textContent = currentYear;
 async function setTextUsingAPI() {
   const msgOfApi = mock_data_from_api //await callApi();
   console.log(msgOfApi.msg);
-  callApiElement.textContent = msgOfApi.msg;
+  apiResult.textContent = msgOfApi.msg;
 }
 setTextUsingAPI();
 
 //dealing with submit
 theForm.addEventListener('submit',(evt)=>{
   evt.preventDefault();
-  const name = document.querySelector('#input-name').value;
-  if (checkName(name)){
-    alert('Membro da família do Gato!')
-  } else {
-    alert('Intruso(a)')
-  }
+  const url = document.querySelector('#input-url').value;
+  //send (with post) the url to frontend:
+  
 });
 
 
