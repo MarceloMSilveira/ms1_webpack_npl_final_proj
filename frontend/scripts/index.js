@@ -1,6 +1,12 @@
 import callApi from "./callApi.js";
 import checkName from "./checkName.js";
 
+const mock_data_from_api = {
+  "title":"data from API",
+  "msg":"The msg of API",
+  "date":"now"
+};
+
 const theForm = document.querySelector('#the-form');
 const callApiElement = document.querySelector('#call-api');
 const currentYearElement = document.querySelector('#this-year');
@@ -11,7 +17,7 @@ currentYearElement.textContent = currentYear;
 
 //calling external API
 async function setTextUsingAPI() {
-  const msgOfApi = await callApi();
+  const msgOfApi = mock_data_from_api //await callApi();
   console.log(msgOfApi.msg);
   callApiElement.textContent = msgOfApi.msg;
 }
