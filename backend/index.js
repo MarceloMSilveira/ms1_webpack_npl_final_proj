@@ -32,7 +32,7 @@ async function scrapeTextFromURL(url) {
         }
 
         // Extract and return the first 200 characters of the text
-        const trimmedText = text.slice(0, 200);
+        const trimmedText = text.slice(0, 1000);
         console.log(`Extracted Text (200 characters):\n${trimmedText}\n--- End of Text Preview ---`);
         return trimmedText;
     } catch (error) {
