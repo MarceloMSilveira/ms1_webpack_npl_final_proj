@@ -15,12 +15,14 @@
       <form id="the-form">
         <label for="input-url">Type a URL: </label>
         <input id="input-url" name="urlToBeParse" type="text" placeholder="url to parse">
-        <br><br>
+        <br>
+        <br>
         <input type="submit">
         <input type="reset">
       </form>
       <hr>
-      <p>Result from NPL API: <span id="api-result"></span></p>
+      <p style="display: none" id="analizing">Analizing...</p>
+      <div style="display: none" id="result"></div>
     </main>
     <footer>
       <p>A MS1 NPL Webpack Proj © <span id="this-year"></span></p>

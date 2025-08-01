@@ -1,3 +1,9 @@
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 import express from "express";
 import bodyParser from 'body-parser';
 import axios from 'axios';
@@ -92,6 +98,14 @@ app.post('/analyze-url', async (req, res) => {
 
 app.get('/', (req,res)=>{
   res.send('index.html');
+})
+
+app.get('/otimista', (req,res)=>{
+    res.sendFile(path.join(__dirname, '../dist/otimista.html'));
+})
+
+app.get('/pessimista', (req,res)=>{
+    res.sendFile(path.join(__dirname, '../dist/pessimista.html'));
 })
 
 app.listen(port,()=>{
