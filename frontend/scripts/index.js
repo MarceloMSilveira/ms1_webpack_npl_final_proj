@@ -4,6 +4,7 @@ const theForm = document.querySelector('#the-form');
 const currentYearElement = document.querySelector('#this-year');
 const analizingText = document.querySelector('#analizing');
 const divResult = document.querySelector('#result');
+const inputUrl = document.querySelector('#input-url');
 
 //seting date to current year:
 const currentYear = new Date().getFullYear();
@@ -25,6 +26,7 @@ function createResultUI(result) {
 //calling /analyze-url endpoint on localhost
 async function setTextUsingAPI(url) {
   const objToSend = {'url':url}
+  analizingText.textContent="Analizing..."
   analizingText.style.display='block';
   const result = await axios.post('http://localhost:3002/analyze-url', objToSend);
   console.log(result.data);
@@ -34,11 +36,20 @@ async function setTextUsingAPI(url) {
 //dealing with submit
 theForm.addEventListener('submit',(evt)=>{
   evt.preventDefault();
-  const url = document.querySelector('#input-url').value;
+  const url = inputUrl.value;
   //send url (with axios / post) the url to frontend:
   setTextUsingAPI(url);
 });
 
-
+//dealing with reset
+theForm.addEventListener('reset',(evt)=>{
+  evt.preventDefault();
+  //const url = document.querySelector('#input-url').value;
+  //send url (with axios / post) the url to frontend:
+  analizingText.style.display='none';
+  divResult.innerHTML='';
+  inputUrl.value='';
+  inputUrl.placeholder="url to parse";
+});
 
 
