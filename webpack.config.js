@@ -80,6 +80,6 @@ export default (env,argv) => {
         new CssMinimizerPlugin(), // adiciona a minificação de CSS
         new TerserPlugin() //This plugin uses terser to minify/minimize your JavaScript.
       ],
-    },
+    }
   }
 };
