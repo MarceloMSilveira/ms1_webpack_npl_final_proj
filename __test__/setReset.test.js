@@ -1,4 +1,4 @@
-import setReset from "./setReset.js";
+import setReset from "../frontend/scripts/setReset.js";
 //Elemento(s) nulo(s) passado(s) para a função.
 beforeEach(()=>{
   document.body.innerHTML = `

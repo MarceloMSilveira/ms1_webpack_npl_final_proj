@@ -1,4 +1,4 @@
-import callNlpApi from "./callApiRoute.js";
+import callNlpApi from "../frontend/scripts/callApiRoute.js";
 
 beforeEach(() => {
   document.body.innerHTML = `<p id="analizing"></p>`;

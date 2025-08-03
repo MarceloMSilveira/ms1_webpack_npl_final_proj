@@ -1,4 +1,4 @@
-import createResultUI from './resultUI.js'
+import createResultUI from '../frontend/scripts/resultUI.js'
 
 beforeEach(()=>{
   //Simular o DOM inicial esperado
