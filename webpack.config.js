@@ -28,7 +28,10 @@ export default (env,argv) => {
           open: true,
           hot: true,
           watchFiles: ['frontend/*.html'], // 👈 assiste arquivos HTML
-          port: 5001
+          port: 5001,
+          devMiddleware: {
+            writeToDisk: true
+          },
         }
       : undefined,
     plugins: [
