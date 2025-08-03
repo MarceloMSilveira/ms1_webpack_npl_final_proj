@@ -10,7 +10,7 @@ body{
   border-radius: 15px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-rows: 50px 3fr 50px;
   padding: 30px;
   width: 60%;
 }
@@ -30,6 +30,10 @@ footer{
   justify-content: end;
   align-items: center;
   flex-direction: column;
+}
+
+footer p {
+  margin: 0px;
 }
 
 #analizing, #result p {
